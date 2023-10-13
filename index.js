@@ -18,7 +18,7 @@ app.get("/api/metrics/:username/:year/:month", async (req, res) => {
 
   try {
     const response = await axios.get(
-      `http://localhost:8000/metrics/${username}/${year}/${month}`
+      `http://metric-storage-service:8000/metrics/${username}/${year}/${month}`
     );
     res.json(response.data);
   } catch (error) {
@@ -32,7 +32,7 @@ app.get("/api/metrics/:username/:repository", async (req, res) => {
 
   try {
     const response = await axios.get(
-      `http://localhost:8080/process/data/${username}/${repository}`
+      `http://metric-storage-service:8000/process/data/${username}/${repository}`
     );
     res.json(response.data);
   } catch (error) {
